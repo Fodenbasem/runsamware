@@ -1,3 +1,30 @@
-/.venv
-/keys
-/__pycache__
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# PyInstaller
+*.spec
+
+# Logs and runtime
+/logs/
+*.log
+
+# Keystore (never commit private keys)
+/keystore/
+
+# IDE / OS files
+.vscode/
+.idea/
+*.swp
+Thumbs.db
+desktop.ini

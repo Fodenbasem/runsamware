@@ -1,0 +1,11 @@
+# Application configuration
+app:
+  name: NovaVault
+  version: 0.1.0
+  logging_level: INFO
+
+keystore:
+  path: ./keystore
+
+logs:
+  path: ./logs

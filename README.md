@@ -1,3 +1,122 @@
+<<<<<<< HEAD
+# NovaVault (skeleton)
+
+**Project:** Hybrid encryption GUI application
+
+**Status:** Template / skeleton for production-grade structure
+
+**Project Metadata**
+- **Name:** NovaVault
+- **Version:** 0.1.0
+- **Python:** 3.10+
+- **License:** Add your license
+
+**Folder Structure**
+
+NovaVault/
+│
+├── app/
+│   ├── gui/           - GUI code (PySide6)
+│   ├── crypto/        - Cryptographic engine
+│   ├── keys/          - Key management utilities
+   ├── utils/         - Helpers (logging, fileops)
+   └── core/          - App controller / glue
+├── tests/             - Unit and integration tests
+├── logs/              - Application logs (gitignored)
+├── requirements.txt
+├── README.md
+├── .gitignore
+├── main.py            - Application launcher
+└── config.yaml        - Default configuration
+
+## Environment Setup
+
+Windows
+
+1. Install Python 3.10+ from https://www.python.org/downloads/windows/
+2. Open PowerShell and create venv:
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+Linux
+
+1. Install Python 3.10+: (example for Ubuntu)
+
+```bash
+sudo apt update
+sudo apt install -y python3 python3-venv python3-pip
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+## Running
+
+Development
+
+```bash
+source .venv/bin/activate   # or .\.venv\Scripts\Activate.ps1 on Windows
+python main.py
+```
+
+Production (packaged)
+
+1. Build a bundled executable using PyInstaller:
+
+```bash
+pip install pyinstaller
+pyinstaller --noconfirm --onefile --name NovaVault main.py
+```
+
+2. The executable will be in `dist/`.
+
+Windows standalone build
+
+```powershell
+pyinstaller --noconfirm --onefile --windowed --name NovaVault main.py
+```
+
+Linux binary
+
+```bash
+pyinstaller --noconfirm --onefile --name NovaVault main.py
+```
+
+Note: Build on target platform (use wine or CI cross-build only with caution).
+
+## Security & Best Practices
+
+- Use virtual environments (`.venv`) and never commit `venv/`.
+- Never commit private keys or keystore files; add `/keystore/` to `.gitignore`.
+- Use environment variables for secrets and passphrases, not checked-in files.
+- Limit file permissions for key files: `chmod 600 private.pem` on Linux.
+- Store logs in `logs/`; rotate logs and avoid logging secrets.
+- Use dependency pinning in production (e.g., `pip freeze > requirements.txt`) and scan for vulnerabilities.
+
+## .gitignore Example
+
+See `.gitignore` in the repo; it excludes `logs/`, `keystore/`, `venv/`, and build artifacts.
+
+## Tests
+
+Run tests with `pytest`:
+
+```bash
+pytest -q
+```
+
+## Next Steps / Recommendations
+
+- Implement authentication for key operations (password-protect private keys).
+- Add CI (GitHub Actions) for linting, tests, and release builds.
+- Add stronger auditing and unit tests for crypto flows.
+=======
 # NovaVault Pro
 ### Enterprise-Grade Hybrid Encryption GUI Application
 
@@ -176,3 +295,4 @@ This prevents system overload even during large folder encryption.
 
 Encrypted output files use:
 
+>>>>>>> b92731030490ec2cf396e776639790a1b36a165c

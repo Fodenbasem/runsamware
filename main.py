@@ -14,21 +14,22 @@ import os
 import sys
 import threading
 import tkinter as tk
-from tkinter import ttk, filedialog, messagebox, simpledialog
-from typing import Optional
-import hashlib
-
-from crypto_engine import CryptoEngine, EncryptionResult, DecryptionResult
-
-
-class NovaCryptGUI:
-    """
-    Main GUI Application for NovaCrypt
-    """
-    
     def __init__(self, root: tk.Tk):
+from PySide6 import QtWidgets
+from app.gui.main_window import MainWindow
+from app.core.app_controller import AppController
+
+
+def main():
+    controller = AppController()
+    app = QtWidgets.QApplication([])
+    w = MainWindow(controller=controller)
+    w.show()
+    app.exec()
+
+
         self.root = root
-        self.root.title("NovaCrypt - Enterprise Encryption")
+    main()
         self.root.geometry("700x550")
         self.root.resizable(False, False)
         

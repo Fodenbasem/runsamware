@@ -1,1 +1,6 @@
-cryptography>=41.0.0
+cryptography>=38.0
+PySide6>=6.5
+tqdm>=4.64
+
+# For tests
+pytest>=7.0
